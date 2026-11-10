@@ -205,15 +205,23 @@ class SyllabusService:
         if faculty in (None, "", "指定しない"):
             return None
         val = str(faculty).strip()
-        faculties = dict(options["faculties"])
+        faculties = {code: label for code, label in options["faculties"] if code}
+        # 1) コード完全一致
         if val in faculties:
             return val
-        # 部分一致は解決済みラベルのみ。推測はしない。
-        matches = [code for code, label in options["faculties"] if label and label in val]
-        if len(matches) == 1:
-            return matches[0]
+        labels = {code: label for code, label in faculties.items() if label}
+        # 2) ラベル完全一致(例: 理工学部 → 115)
+        exact = [code for code, label in labels.items() if label == val]
+        if len(exact) == 1:
+            return exact[0]
+        # 3) 部分一致(ユーザー文字列が公式ラベルに含まれる場合のみ)
+        partial = [code for code, label in labels.items() if val in label]
+        if len(partial) == 1:
+            return partial[0]
+        candidates = sorted({label for code, label in labels.items() if val in label})[:6]
         raise KindaiSyllabusError(
             f"学部を検証できませんでした: {faculty!r}。list_faculties() の code を指定してください"
+            + (f" (候補: {', '.join(candidates)})" if candidates else "")
         )
 
     def _resolve_checkboxes(

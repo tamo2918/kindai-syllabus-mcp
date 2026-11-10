@@ -98,6 +98,18 @@ async def test_search_unknown_filter_is_error(service: SyllabusService) -> None:
 
 
 @respx.mock
+async def test_search_faculty_label_exact_beats_partial(service: SyllabusService) -> None:
+    """「理工学部」は「産業理工学部」にも部分一致するため、完全一致を優先する。"""
+    respx.get(SEARCH_URL).respond(200, text=load_fixture("search_form.html"))
+    results_route = respx.post(SEARCH_URL).respond(200, text=load_fixture("search_results.html"))
+    assert service._resolve_faculty("理工学部", await service._search_form_options()) == "115"
+    assert service._resolve_faculty("産業理工学部", await service._search_form_options()) == "11D"
+    assert service._resolve_faculty("法学部", await service._search_form_options()) == "111"
+    # 学部コード指定
+    assert service._resolve_faculty("11D", await service._search_form_options()) == "11D"
+
+
+@respx.mock
 async def test_search_future_year_is_rejected(service: SyllabusService) -> None:
     respx.get(SEARCH_URL).respond(200, text=load_fixture("search_form.html"))
     route = respx.post(SEARCH_URL)
