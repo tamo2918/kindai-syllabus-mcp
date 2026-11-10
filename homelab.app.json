@@ -1,0 +1,15 @@
+{
+  "id": "kindai-syllabus-mcp",
+  "title": "近畿大学シラバスMCP",
+  "description": "公式シラバスを読み取り専用で検索・取得するstdio MCPサーバー。Codex・OpenCode等から利用",
+  "kind": "management",
+  "compose_project": null,
+  "command": ["uv", "run", "--project", "/home/tatsuki/projects/kindai-syllabus-mcp", "kindai-syllabus-mcp"],
+  "url": null,
+  "features": [
+    "科目詳細取得(get_course)・出典URLと取得日時を応答に含む",
+    "シラバス検索(search_courses): 科目名/教員名/キーワード/学部/学年/開講期",
+    "学部コード一覧(list_faculties)",
+    "SQLiteキャッシュ(~/.cache/kindai-syllabus-mcp/cache.sqlite3)"
+  ]
+}

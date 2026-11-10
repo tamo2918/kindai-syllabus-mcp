@@ -1,0 +1,32 @@
+[project]
+name = "kindai-syllabus-mcp"
+version = "0.1.0"
+description = "近畿大学シラバス読み取り専用MCPサーバー (stdio, 公式Python SDK v2)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "beautifulsoup4>=4.13",
+    "httpx>=0.28",
+    "mcp>=2",
+    "pydantic>=2",
+]
+
+[project.scripts]
+kindai-syllabus-mcp = "kindai_syllabus_mcp:main"
+
+[build-system]
+requires = ["uv_build>=0.13.1,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+addopts = "-q"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "pytest-asyncio>=1.4.1.post1",
+    "respx>=0.23.1",
+]

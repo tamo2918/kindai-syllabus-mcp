@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	シラバス外部公開検索画面
+</title><meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" /><link href="../Styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../common.js"></script>
+    <!-- 二重リクエスト防止用スクリーン start -->
+    <style type="text/css">
+       .FreezePaneOff
+       {
+          visibility: hidden;
+          display: none;
+          position: absolute;
+          top: -100px;
+          left: -100px;
+       }
+
+       .FreezePaneOn
+       {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          visibility: visible;
+          display: block;
+          width: 100%;
+          background-color:rgba(169,169,169,0.2);
+          z-index: 999;
+          padding-top: 15%;
+       }
+
+       .InnerFreezePane
+       {
+          text-align: center;
+          width: 60%;
+          background-color:rgba(169,169,169,0.8);
+          color: rgb(248,248,255);
+          font-size: large;
+          border: groove 2px rgba(169,169,169,0.9);
+          padding: 9px;
+       }
+    </style>
+    <script type="text/javascript">
+        function FreezeScreen(msg) {
+
+            if (isIE()) {
+                return true;
+            }
+            if (document.readyState != null &&
+                document.readyState != "complete" &&
+                document.readyState != "interactive") {
+                alert(msg);
+                return false;
+            }
+
+            scroll(0, 0);
+            var outerPane = document.getElementById('FreezePane');
+            var innerPane = document.getElementById('InnerFreezePane');
+            if (outerPane) {
+                outerPane.style.height = bodyHeight;
+                outerPane.className = 'FreezePaneOn';
+            }
+            if (innerPane) innerPane.innerHTML = msg;
+
+            return true;
+        }
+        function isIE(){
+            var userAgent = window.navigator.userAgent.toLowerCase();
+            if (userAgent.indexOf('msie') != -1 ||
+                userAgent.indexOf('trident') != -1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script> 
+    <!-- 二重リクエスト防止用スクリーン end -->
+</head>
+<body>
+    <!-- 二重リクエスト防止用スクリーン start-->
+    <div align="center" id="FreezePane" class="FreezePaneOff">
+      <div id="InnerFreezePane" class="InnerFreezePane"></div>
+    </div>
+    <!-- 二重リクエスト防止用スクリーン end-->
+    <a name='label_page_header'></a>
+    <form name="form1" method="post" action="./sy01000.aspx" id="form1" onsubmit="return FreezeScreen(&#39;■■■データ処理中■■■&#39;);">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTM5MzI1MDE1DxYCHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAgIDD2QWBgIFDxBkEBUpAAnms5Xlrabpg6gM57WM5riI5a2m6YOoDOe1jOWWtuWtpumDqAznkIblt6Xlrabpg6gJ6Jas5a2m6YOoCei+suWtpumDqAzmlofoirjlrabpg6gJ5Yy75a2m6YOoEueUn+eJqeeQhuW3peWtpumDqAnlt6Xlrabpg6gS55Sj5qWt55CG5bel5a2m6YOoEue3j+WQiOekvuS8muWtpumDqAzlu7rnr4nlrabpg6gM5Zu96Zqb5a2m6YOoDOaDheWgseWtpumDqAznnIvorbflrabpg6gV57eP5ZCI5paH5YyW56CU56m256eRPOWun+WtpuekvuS8mui1t+alreOCpOODjuODmeODvOOCt+ODp+ODs+WtpuS9jeODl+ODreOCsOODqeODoBLlu7rnr4nlrabnoJTnqbbnp5ES5oOF5aCx5a2m56CU56m256eRD+WMu+WtpueglOeptuenkQ/ms5XlrabnoJTnqbbnp5EP5ZWG5a2m56CU56m256eREue1jOa4iOWtpueglOeptuenkRjnt4/lkIjnkIblt6XlrabnoJTnqbbnp5EP6Jas5a2m56CU56m256eRD+i+suWtpueglOeptuenkRjnlJ/niannkIblt6XlrabnoJTnqbbnp5EY55Sj5qWt55CG5bel5a2m56CU56m256eRG+OCt+OCueODhuODoOW3peWtpueglOeptuenkQ/ms5Xnp5HlpKflrabpmaIP55+t5pyf5aSn5a2m6YOoD+mAmuS/oeaVmeiCsumDqAzlhbHpgJrmlZnppIoJ5aSW5Zu96KqeDOaVmeiBt+iqsueoiwzlj7jmm7joqrLnqIsS55Sf5rav44K544Od44O844OEFeODqeODs+OCsuODvOOCuOODj+ODlhLnlZnlrabnlJ/nlKjnp5Hnm64VKQADMTExAzExMwMxMTQDMTE1AzExNgMxMTcDMTE4AzExOQMxMUEDMTFCAzExRAMxMUYDMTFHAzExTQMxMU4DMTFQAzIxQwMyMUcDMjFIAzIxSgMyMjEDMjMxAzIzMgMyMzMDMjM2AzIzNwMyMzgDMjM5AzIzQgMyM0MDMjUxAzMxMQM0MTEDWjExA1oxMwNaMTUDWjE3A1oxOQNaMjYDWjI4FCsDKWdnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnFgFmZAIVDxBkEBUEAAnlrabnp5HpoIYJ56eR55uu6aCGCeawj+WQjemghhUEAzAwMQMwMDIDMDAzAzAwNBQrAwRnZ2dnZGQCJQ88KwARAwAPFgQeC18hRGF0YUJvdW5kZx4LXyFJdGVtQ291bnRmZAEQFgAWABYADBQrAABkGAIFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxZzBQpjYk5FWl8wMDEwBQpjYk5FWl8wMDIwBQpjYk5FWl8wMDMwBQpjYk5FWl8wMDQwBQpjYk5FWl8wMDUwBQpjYk5FWl8wMDYwBQpjYk5FWl8wMDcwBQpjYk5FWl8wMDgwBQpjYk5FWl8wMDkwBQpjYk5FWl8wMTAwBQpjYk5FWl8wMTEwBQpjYk5FWl8wMTIwBQpjYk5FWl8wMTMwBQpjYk5FWl8wMTQwBQpjYk5FWl8wMTUwBQpjYlROSV8wMDEwBQpjYlROSV8wMDIwBQpjYlROSV8wMDMwBQpjYlROSV8wMDQwBQpjYlROSV8wMDUwBQpjYlROSV8wMDYwBQpjYlROSV8wMDcwBQpjYlROSV8wMDgwBQpjYlROSV8wMDkwBQpjYlROSV8wMTAwBQpjYlROSV8wMTEwBQpjYlROSV8wMTIwBQpjYlROSV8wMTMwBQpjYlROSV8wMTQwBQpjYlROSV8wMTUwBQpjYlROSV8wMTYwBQpjYlROSV8wMTcwBQpjYlROSV8wMTgwBQljYktLS18wMDEFCWNiS0tLXzAwMgUJY2JLS0tfMDAzBQljYktLS18wMDQFCWNiS0tLXzAwNQUJY2JLS0tfMDA2BQljYktLS18wMDcFCWNiS0tLXzAwOAUJY2JLS0tfMDA5BQljYktLS18wMTAFCWNiS0tLXzAxMQUJY2JLS0tfMDEyBQljYktLS18wMTMFCWNiS0tLXzAxNAUJY2JLS0tfMDE1BQljYktLS18wMTYFCWNiS0tLXzAxNwUJY2JLS0tfMDE4BQljYkJOWV8wMDEFCWNiQk5ZXzAwMgUJY2JCTllfMDAzBQljYkJOWV8wMDQFCWNiS0tCXzAwMQUJY2JLS0JfMDAyBQljYktLQl8wMDMFCWNiS0tCXzAwNAUJY2JLS0JfMDA1BQljYktLQl8wMDYFCWNiS0tCXzAwNwUJY2JLS0JfMDA4BQljYktLQl8wMDkFCWNiS0tCXzAxMAUJY2JLS0JfMDExBQljYktLQl8wMTIFCWNiS0tCXzAxMwUJY2JLS0JfMDE0BQljYktLQl8wMTUFCWNiS0tCXzAxNgUJY2JLS0JfMDE3BQljYktLQl8wMTgFCWNiS0tCXzAxOQUJY2JLS0JfMDIwBQljYktLQl8wMjEFCWNiS0tCXzAyMgUJY2JLS0JfMDIzBQljYktLQl8wMjQFCWNiS0tCXzAyNQUJY2JIU1NfMDAxBQljYkhTU18wMDIFCWNiSFNTXzAwMwUJY2JIU1NfMDA0BQljYkhTU18wMDUFCWNiSFNTXzAwNgUJY2JIU1NfMDA3BQljYkZPTV8wMTAFCWNiRk9NXzAxMQUJY2JGT01fMDEyBQljYkZPTV8wMTMFCWNiRk9NXzAxNAUJY2JGT01fMDE1BQljYkFDVF8xNDAFCWNiQUNUXzE1MAUJY2JBQ1RfMTYwBQljYkFDVF8xNzAFCWNiQUNUXzE4MAUJY2JBQ1RfMTkwBQljYkFDVF8yMDAFCWNiQUNUXzIxMAUJY2JBQ1RfMjIwBQljYklDVF8wMDEFCWNiSUNUXzAwMgUJY2JJQ1RfMDAzBQljYkxBR18wMDEFCWNiTEFHXzAwMgUJY2JMQUdfMDAzBQljYkxBR18wMDQFCWNiTEFHXzAwNQUJY2JFWFBfMDAxBQljYkVYUF8wMDIFCWNiRVhQXzAwMwUJY2JFWFBfMDA0BQljYkVYUF8wMDUFBmd2TGlzdA88KwAMAQhmZMpiEA65DdUt41OQI86Ubz6FJ3d+IakzyIPQUcyYsGjt" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script type="text/javascript">addEvent(window, "load", set_onkeydown);addEvent(window, "load", set_oncontextmenu);</script><script type="text/javascript">
+function syllabusopen(syllabuNo){  var subWindow;
+  var x = 1024;
+  var y = 700;
+  var xPos = (screen.width  - x) / 2;
+  var yPos = (screen.height - y) / 2 - 20;
+  subWindow = window.open('../Form/SY01010.aspx?syllabusno='+syllabuNo
+           ,'SY01010'
+           ,'menubar=yes,directories=no,resizable=yes,status=no,toolbar=yes,scrollbars=yes,location=no,width='+x+',height='+y+',left='+xPos+',top='+yPos);
+  subWindow.focus();
+}
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1F47BB0D" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+</div>
+    <div align="left" style="width:600px;height:60px">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img alt="" src="../Images/logo.jpg" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <img alt="" src="../Images/title.png" />
+    </div>
+    <div align="left" style="width:900px;height:30px;padding-left:44px;">
+        
+    </div>
+    
+    <div class="verTop alLeft">
+        <table style="border:solid 0px red;width:900px;margin-left:44px;">
+            <tr>
+                <td>
+                    <table class="SearchTbl alLeft" >
+                        <tr>
+                            <td  class="SearchBox" style="width:900px;">
+                                <table class="SearchInnerTbl">
+                                <tr>
+                                    <td class="SearchInnerBox" style="width:900px;">
+                                        <table style="border:solid 0px green;">
+                                        <tr>
+                                            <!-- -->
+                                            <td>
+                                                <table class="SearchInputTbl" style="margin-left:30px;">
+                                                     <tr>
+                                                        <td class="InputFldLbl alRight" style="width:130px;">
+                                                            <span id="Label1" class="InputFldFont">学部名</span>
+                                                         </td>
+                                                        <td  class="SearchInputFld" style="width:300px;">
+                                                           <select name="dropDownListGakubu" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;dropDownListGakubu\&#39;,\&#39;\&#39;)&#39;, 0)" id="dropDownListGakubu" tabindex="100">
+	<option selected="selected" value=""></option>
+	<option value="111">法学部</option>
+	<option value="113">経済学部</option>
+	<option value="114">経営学部</option>
+	<option value="115">理工学部</option>
+	<option value="116">薬学部</option>
+	<option value="117">農学部</option>
+	<option value="118">文芸学部</option>
+	<option value="119">医学部</option>
+	<option value="11A">生物理工学部</option>
+	<option value="11B">工学部</option>
+	<option value="11D">産業理工学部</option>
+	<option value="11F">総合社会学部</option>
+	<option value="11G">建築学部</option>
+	<option value="11M">国際学部</option>
+	<option value="11N">情報学部</option>
+	<option value="11P">看護学部</option>
+	<option value="21C">総合文化研究科</option>
+	<option value="21G">実学社会起業イノベーション学位プログラム</option>
+	<option value="21H">建築学研究科</option>
+	<option value="21J">情報学研究科</option>
+	<option value="221">医学研究科</option>
+	<option value="231">法学研究科</option>
+	<option value="232">商学研究科</option>
+	<option value="233">経済学研究科</option>
+	<option value="236">総合理工学研究科</option>
+	<option value="237">薬学研究科</option>
+	<option value="238">農学研究科</option>
+	<option value="239">生物理工学研究科</option>
+	<option value="23B">産業理工学研究科</option>
+	<option value="23C">システム工学研究科</option>
+	<option value="251">法科大学院</option>
+	<option value="311">短期大学部</option>
+	<option value="411">通信教育部</option>
+	<option value="Z11">共通教養</option>
+	<option value="Z13">外国語</option>
+	<option value="Z15">教職課程</option>
+	<option value="Z17">司書課程</option>
+	<option value="Z19">生涯スポーツ</option>
+	<option value="Z26">ランゲージハブ</option>
+	<option value="Z28">留学生用科目</option>
+
+</select>                                                   
+                                                         </td>
+                                                        <td class="SearchInputFldRightBox">
+                                                            &nbsp;</td>
+                                                     </tr>                                                    <tr>
+                                                        <td class="InputFldLbl alRight">
+                                                            <span id="lblKmk" class="InputFldFont">科目</span>
+                                                        </td>
+                                                        <td  class="SearchInputFld">
+                                                            <input name="txtJoukenKamokuMei" type="text" maxlength="150" id="txtJoukenKamokuMei" tabindex="200" class="inputTextBoxStyle IMEzenkaku" style="border-color:Black;border-width:1px;border-style:Solid;height:16px;width:283px;" />                                                            
+                                                         </td>
+                                                        <td class="SearchInputFldRightBox">
+                                                            &nbsp;
+                                                        </td>
+                                                     </tr>
+                                                    <tr>
+                                                        <td class="InputFldLbl alRight">
+                                                            <span id="lblKyoin" class="InputFldFont">教員</span>
+                                                        </td>
+                                                        <td  class="SearchInputFld">
+                                                            <input name="txtJoukenKyoinMei" type="text" maxlength="50" id="txtJoukenKyoinMei" tabindex="300" class="inputTextBoxStyle IMEzenkaku" style="border-color:Black;border-width:1px;border-style:Solid;height:16px;width:200px;" />                                                            
+                                                         </td>
+                                                        <td class="SearchInputFldRightBox">
+                                                            (氏名、カナ氏名から検索)
+                                                        </td>
+                                                     </tr>
+                                                    <tr>
+                                                        <td class="InputFldLbl alRight">
+                                                            <span id="lblKeyWord" class="InputFldFont">本文キーワード検索</span>
+                                                        </td>
+                                                        <td  class="SearchInputFld">
+                                                            <input name="txtJoukenKeyword" type="text" maxlength="50" id="txtJoukenKeyword" tabindex="400" class="inputTextBoxStyle IMEzenkaku" style="border-color:Black;border-width:1px;border-style:Solid;height:16px;width:200px;" />                                                            
+                                                         </td>
+                                                        <td class="SearchInputFldRightBox" style="width:520px;">
+                                                            (半角空白で区切ることで複数の条件に一致する内容を検索できます)
+                                                        </td>
+                                                     </tr>
+                                                     <tr>
+                                                        <td class="InputFldLbl alRight">
+                                                            <span id="Label3" class="InputFldFont">並び順</span>
+                                                        </td>
+                                                        <td  class="SearchInputFld">
+                                                           <select name="dropDownSort" id="dropDownSort" tabindex="500" style="width:170px;">
+	<option selected="selected" value="001"></option>
+	<option value="002">学科順</option>
+	<option value="003">科目順</option>
+	<option value="004">氏名順</option>
+
+</select>                                                   
+                                                         </td>
+                                                        <td class="SearchInputFldRightBox">
+                                                            (所属学科順、科目順、カナ氏名順)                                           
+                                                        </td>
+                                                     </tr>
+                                                    <tr>
+                                                        <td class="InputFldLbl alRight">
+                                                            <span id="Label2" class="InputFldFont">検索条件</span>
+                                                        </td>
+                                                        <td  class="SearchInputFld">
+                                                             検索したい条件をチェック(複数可)してください。
+                                                         </td>
+                                                        <td class="SearchInnerHeader alRight">
+                                                            <input type="submit" name="btnSearch" value="検索" id="btnSearch" tabindex="10100" class="inputBtnStyle" style="width:100px;" />
+                                                            <input type="submit" name="btnSearchReset" value="リセット" id="btnSearchReset" tabindex="10200" class="inputBtnStyle" style="width:100px;" />
+                                                        </td>
+                                                        </tr>
+                                                </table>
+                                            </td>
+                                      </tr>
+                                      <tr>
+                                          <td  Width="900px">
+                                           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;※適用カリキュラムによっては、単位数や開講年次等が異なる場合がありますので、必ず履修要項で入学年度のカリキュラムを確認してください。
+                                           </td>     
+                                      </tr> 
+	                                  <tr>
+		                                <td>
+		                                    <div id="pnlJoken" style="width:910px;">
+	<div>
+		<table class='SearchChkTbl'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+学科
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+開講年次
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0010" type="checkbox" name="cbNEZ_0010" tabindex="600" /><label for="cbNEZ_0010">1年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0020" type="checkbox" name="cbNEZ_0020" tabindex="610" /><label for="cbNEZ_0020">2年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0030" type="checkbox" name="cbNEZ_0030" tabindex="620" /><label for="cbNEZ_0030">3年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0040" type="checkbox" name="cbNEZ_0040" tabindex="630" /><label for="cbNEZ_0040">4年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0050" type="checkbox" name="cbNEZ_0050" tabindex="640" /><label for="cbNEZ_0050">5年次</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0060" type="checkbox" name="cbNEZ_0060" tabindex="650" /><label for="cbNEZ_0060">6年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0070" type="checkbox" name="cbNEZ_0070" tabindex="660" /><label for="cbNEZ_0070">1～2年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0080" type="checkbox" name="cbNEZ_0080" tabindex="670" /><label for="cbNEZ_0080">1～3年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0090" type="checkbox" name="cbNEZ_0090" tabindex="680" /><label for="cbNEZ_0090">1～4年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0100" type="checkbox" name="cbNEZ_0100" tabindex="690" /><label for="cbNEZ_0100">2～3年次</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0110" type="checkbox" name="cbNEZ_0110" tabindex="700" /><label for="cbNEZ_0110">2～4年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0120" type="checkbox" name="cbNEZ_0120" tabindex="710" /><label for="cbNEZ_0120">3～4年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0130" type="checkbox" name="cbNEZ_0130" tabindex="720" /><label for="cbNEZ_0130">4～5年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0140" type="checkbox" name="cbNEZ_0140" tabindex="730" /><label for="cbNEZ_0140">4～6年次</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbNEZ_0150" type="checkbox" name="cbNEZ_0150" tabindex="740" /><label for="cbNEZ_0150">5～6年次</label></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+単位
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0010" type="checkbox" name="cbTNI_0010" tabindex="750" /><label for="cbTNI_0010">1単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0020" type="checkbox" name="cbTNI_0020" tabindex="760" /><label for="cbTNI_0020">2単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0030" type="checkbox" name="cbTNI_0030" tabindex="770" /><label for="cbTNI_0030">3単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0040" type="checkbox" name="cbTNI_0040" tabindex="780" /><label for="cbTNI_0040">4単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0050" type="checkbox" name="cbTNI_0050" tabindex="790" /><label for="cbTNI_0050">5単位</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0060" type="checkbox" name="cbTNI_0060" tabindex="800" /><label for="cbTNI_0060">6単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0070" type="checkbox" name="cbTNI_0070" tabindex="810" /><label for="cbTNI_0070">7単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0080" type="checkbox" name="cbTNI_0080" tabindex="820" /><label for="cbTNI_0080">8単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0090" type="checkbox" name="cbTNI_0090" tabindex="830" /><label for="cbTNI_0090">9単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0100" type="checkbox" name="cbTNI_0100" tabindex="840" /><label for="cbTNI_0100">10単位</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0110" type="checkbox" name="cbTNI_0110" tabindex="850" /><label for="cbTNI_0110">12単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0120" type="checkbox" name="cbTNI_0120" tabindex="860" /><label for="cbTNI_0120">16単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0130" type="checkbox" name="cbTNI_0130" tabindex="870" /><label for="cbTNI_0130">18単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0140" type="checkbox" name="cbTNI_0140" tabindex="880" /><label for="cbTNI_0140">20単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0150" type="checkbox" name="cbTNI_0150" tabindex="890" /><label for="cbTNI_0150">0．5単位</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0160" type="checkbox" name="cbTNI_0160" tabindex="900" /><label for="cbTNI_0160">1．2単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0170" type="checkbox" name="cbTNI_0170" tabindex="910" /><label for="cbTNI_0170">1．5単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbTNI_0180" type="checkbox" name="cbTNI_0180" tabindex="920" /><label for="cbTNI_0180">2．4単位</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>&nbsp;</td>
+<td style ='padding-top:2px;height:18px;width:150px;'>&nbsp;</td>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+開講期
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_001" type="checkbox" name="cbKKK_001" tabindex="930" /><label for="cbKKK_001">1セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_002" type="checkbox" name="cbKKK_002" tabindex="940" /><label for="cbKKK_002">2セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_003" type="checkbox" name="cbKKK_003" tabindex="950" /><label for="cbKKK_003">3セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_004" type="checkbox" name="cbKKK_004" tabindex="960" /><label for="cbKKK_004">4セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_005" type="checkbox" name="cbKKK_005" tabindex="970" /><label for="cbKKK_005">5セメスター</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_006" type="checkbox" name="cbKKK_006" tabindex="980" /><label for="cbKKK_006">6セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_007" type="checkbox" name="cbKKK_007" tabindex="990" /><label for="cbKKK_007">7セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_008" type="checkbox" name="cbKKK_008" tabindex="1000" /><label for="cbKKK_008">8セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_009" type="checkbox" name="cbKKK_009" tabindex="1010" /><label for="cbKKK_009">前期</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_010" type="checkbox" name="cbKKK_010" tabindex="1020" /><label for="cbKKK_010">後期</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_011" type="checkbox" name="cbKKK_011" tabindex="1030" /><label for="cbKKK_011">通年</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_012" type="checkbox" name="cbKKK_012" tabindex="1040" /><label for="cbKKK_012">半期</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_013" type="checkbox" name="cbKKK_013" tabindex="1050" /><label for="cbKKK_013">集中</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_014" type="checkbox" name="cbKKK_014" tabindex="1060" /><label for="cbKKK_014">夏休み</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_015" type="checkbox" name="cbKKK_015" tabindex="1070" /><label for="cbKKK_015">1～8セメスター</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_016" type="checkbox" name="cbKKK_016" tabindex="1080" /><label for="cbKKK_016">3～8セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_017" type="checkbox" name="cbKKK_017" tabindex="1090" /><label for="cbKKK_017">5～8セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKK_018" type="checkbox" name="cbKKK_018" tabindex="1100" /><label for="cbKKK_018">3～5セメスター</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>&nbsp;</td>
+<td style ='padding-top:2px;height:18px;width:150px;'>&nbsp;</td>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+分野
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbBNY_001" type="checkbox" name="cbBNY_001" tabindex="1110" /><label for="cbBNY_001">修士課程</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbBNY_002" type="checkbox" name="cbBNY_002" tabindex="1120" /><label for="cbBNY_002">博士課程</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbBNY_003" type="checkbox" name="cbBNY_003" tabindex="1130" /><label for="cbBNY_003">前期課程</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbBNY_004" type="checkbox" name="cbBNY_004" tabindex="1140" /><label for="cbBNY_004">後期課程</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+科目区分
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_001" type="checkbox" name="cbKKB_001" tabindex="1150" /><label for="cbKKB_001">共通教養科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_002" type="checkbox" name="cbKKB_002" tabindex="1160" /><label for="cbKKB_002">外国語科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_003" type="checkbox" name="cbKKB_003" tabindex="1170" /><label for="cbKKB_003">基礎科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_004" type="checkbox" name="cbKKB_004" tabindex="1180" /><label for="cbKKB_004">専門科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_005" type="checkbox" name="cbKKB_005" tabindex="1190" /><label for="cbKKB_005">人間形成科目</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_006" type="checkbox" name="cbKKB_006" tabindex="1200" /><label for="cbKKB_006">リテラシー科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_007" type="checkbox" name="cbKKB_007" tabindex="1210" /><label for="cbKKB_007">教職科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_008" type="checkbox" name="cbKKB_008" tabindex="1220" /><label for="cbKKB_008">（通信）スクーリング科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_009" type="checkbox" name="cbKKB_009" tabindex="1230" /><label for="cbKKB_009">（通信）通信授業科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_010" type="checkbox" name="cbKKB_010" tabindex="1240" /><label for="cbKKB_010">（通信）メディア科目</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_011" type="checkbox" name="cbKKB_011" tabindex="1250" /><label for="cbKKB_011">総合科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_012" type="checkbox" name="cbKKB_012" tabindex="1260" /><label for="cbKKB_012">特修プログラム</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_013" type="checkbox" name="cbKKB_013" tabindex="1270" /><label for="cbKKB_013">基礎共通科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_014" type="checkbox" name="cbKKB_014" tabindex="1280" /><label for="cbKKB_014">専修科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_015" type="checkbox" name="cbKKB_015" tabindex="1290" /><label for="cbKKB_015">演習科目</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_016" type="checkbox" name="cbKKB_016" tabindex="1300" /><label for="cbKKB_016">クラスタ科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_017" type="checkbox" name="cbKKB_017" tabindex="1310" /><label for="cbKKB_017">関連科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_018" type="checkbox" name="cbKKB_018" tabindex="1320" /><label for="cbKKB_018">特殊研究</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_019" type="checkbox" name="cbKKB_019" tabindex="1330" /><label for="cbKKB_019">専門基礎科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_020" type="checkbox" name="cbKKB_020" tabindex="1340" /><label for="cbKKB_020">博物館学課程科目</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_021" type="checkbox" name="cbKKB_021" tabindex="1350" /><label for="cbKKB_021">教養教育科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_022" type="checkbox" name="cbKKB_022" tabindex="1360" /><label for="cbKKB_022">共通科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_023" type="checkbox" name="cbKKB_023" tabindex="1370" /><label for="cbKKB_023">横断科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_024" type="checkbox" name="cbKKB_024" tabindex="1380" /><label for="cbKKB_024">共通基礎科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbKKB_025" type="checkbox" name="cbKKB_025" tabindex="1390" /><label for="cbKKB_025">学部基礎科目</label></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+必修選択
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbHSS_001" type="checkbox" name="cbHSS_001" tabindex="1400" /><label for="cbHSS_001">必修科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbHSS_002" type="checkbox" name="cbHSS_002" tabindex="1410" /><label for="cbHSS_002">選択必修科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbHSS_003" type="checkbox" name="cbHSS_003" tabindex="1420" /><label for="cbHSS_003">選択科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbHSS_004" type="checkbox" name="cbHSS_004" tabindex="1430" /><label for="cbHSS_004">自由選択科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbHSS_005" type="checkbox" name="cbHSS_005" tabindex="1440" /><label for="cbHSS_005">自由科目</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbHSS_006" type="checkbox" name="cbHSS_006" tabindex="1450" /><label for="cbHSS_006">選択指定科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>
+<input id="cbHSS_007" type="checkbox" name="cbHSS_007" tabindex="1460" /><label for="cbHSS_007">必履修科目</label></td>
+<td style ='padding-top:2px;height:18px;width:150px;'>&nbsp;</td>
+<td style ='padding-top:2px;height:18px;width:150px;'>&nbsp;</td>
+<td style ='padding-top:2px;height:18px;width:150px;'>&nbsp;</td>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+授業形態
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbFOM_010" type="checkbox" name="cbFOM_010" tabindex="1470" /><label for="cbFOM_010">対面授業（全授業回）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbFOM_011" type="checkbox" name="cbFOM_011" tabindex="1480" /><label for="cbFOM_011">対面授業（授業回の半数以上が対面授業／それ以外は、メディア授業）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbFOM_012" type="checkbox" name="cbFOM_012" tabindex="1490" /><label for="cbFOM_012">メディア授業（全授業回）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbFOM_013" type="checkbox" name="cbFOM_013" tabindex="1500" /><label for="cbFOM_013">メディア授業（授業回の半数以上がメディア授業／それ以外は、対面授業）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbFOM_014" type="checkbox" name="cbFOM_014" tabindex="1510" /><label for="cbFOM_014">メディア授業（ハイフレックス授業：授業回ごとに学生が対面、同時オンライン授業を選択可能）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbFOM_015" type="checkbox" name="cbFOM_015" tabindex="1520" /><label for="cbFOM_015">通信授業（通信教育部）</label></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+アクティブ・ラーニングの要素
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_140" type="checkbox" name="cbACT_140" tabindex="1530" /><label for="cbACT_140">PBL（課題解決学習）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_150" type="checkbox" name="cbACT_150" tabindex="1540" /><label for="cbACT_150">ディスカッション、ディベート</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_160" type="checkbox" name="cbACT_160" tabindex="1550" /><label for="cbACT_160">反転授業（知識習得の要素を授業外に済ませ、知識確認等の要素を教室で行う授業形態）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_170" type="checkbox" name="cbACT_170" tabindex="1560" /><label for="cbACT_170">グループワーク</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_180" type="checkbox" name="cbACT_180" tabindex="1570" /><label for="cbACT_180">プレゼンテーション</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_190" type="checkbox" name="cbACT_190" tabindex="1580" /><label for="cbACT_190">フィールドワーク</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_200" type="checkbox" name="cbACT_200" tabindex="1590" /><label for="cbACT_200">実験・実習科目</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_210" type="checkbox" name="cbACT_210" tabindex="1600" /><label for="cbACT_210">ミニッツペーパー</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbACT_220" type="checkbox" name="cbACT_220" tabindex="1610" /><label for="cbACT_220">該当なし</label></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+ICTを活用したアクティブ・ラーニング
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbICT_001" type="checkbox" name="cbICT_001" tabindex="1620" /><label for="cbICT_001">双方向授業（クリッカーや、学生ディスカッション用にGoogleClassroom等を活用）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbICT_002" type="checkbox" name="cbICT_002" tabindex="1630" /><label for="cbICT_002">自主学習支援（e-learning等を活用）</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbICT_003" type="checkbox" name="cbICT_003" tabindex="1640" /><label for="cbICT_003">該当なし</label></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV2'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+使用言語
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbLAG_001" type="checkbox" name="cbLAG_001" tabindex="1650" /><label for="cbLAG_001">日本語</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbLAG_002" type="checkbox" name="cbLAG_002" tabindex="1660" /><label for="cbLAG_002">英語</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbLAG_003" type="checkbox" name="cbLAG_003" tabindex="1670" /><label for="cbLAG_003">その他の言語</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbLAG_004" type="checkbox" name="cbLAG_004" tabindex="1680" /><label for="cbLAG_004">日本語・英語の併用</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbLAG_005" type="checkbox" name="cbLAG_005" tabindex="1690" /><label for="cbLAG_005">日本語・その他の言語の併用</label></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+	</div><div>
+		<table class='SearchChkTblLV3'style='margin-left:30px;width:880px;'>
+<tr>
+<td class='SearchInputFldRightBox listDetailFont' style='padding-top:2px;height:18px;width:50px;'>
+実践的な教育内容
+</td><td class='SearchInputFldRightBox verTop' style='width:750px;'>
+<table class='SearchInnerBox' style='margin-left:30px;'>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbEXP_001" type="checkbox" name="cbEXP_001" tabindex="1700" /><label for="cbEXP_001">経営者、技術者、研究者、行政官等の当該授業科目に関連した実務経験がある教員が行う授業</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbEXP_002" type="checkbox" name="cbEXP_002" tabindex="1710" /><label for="cbEXP_002">オムニバス形式で多様な企業等から講師を招いて行う授業</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbEXP_003" type="checkbox" name="cbEXP_003" tabindex="1720" /><label for="cbEXP_003">企業等から提供された課題（企画提案等）に取り組む授業</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbEXP_004" type="checkbox" name="cbEXP_004" tabindex="1730" /><label for="cbEXP_004">学外でのインターンシップや実習、研修を授業の一環として位置付けている授業</label></td>
+</tr>
+<tr>
+<td style ='padding-top:2px;height:18px;width:750px;'>
+<input id="cbEXP_005" type="checkbox" name="cbEXP_005" tabindex="1740" /><label for="cbEXP_005">該当なし</label></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+	</div>
+</div>
+		                                </td>
+	                                  </tr>
+                                </table>
+                            </td>
+                            <!-- -->
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+         </table>
+        <!--RESULT-->
+        </td>
+        </tr>
+        </table>
+        <br /> 
+        <br /> 
+        <table style="margin-left:34px;">
+        <tr>
+        <td class="SearchInnerHeader" style="width:946px">
+            <table class="SearchInnerTbl" style="border:solid 0px red;">
+            <tr>
+                <td class="SearchInnerHeader alRight" style="width:946px;">
+                    <table>
+                    <tr>
+                        <td class="verBottom alLeft mrLZero">
+                        
+                                        
+                        <span id="lblKensu"></span>
+                        <a name="label_result_header" id="label_result_header">&nbsp;</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="verBottom alLeft mrLZero">
+                            <br />
+
+                            <span id="testLbl"></span>
+                                    <div>
+
+</div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="verBottom alLeft mrLZero">
+                        
+                        </td>
+                    </tr>
+                </table>
+               </td>
+            </tr>
+            </table>
+        </td>
+        </tr>
+        </table>
+    </div>
+    </form>
+    <!-- 二重リクエスト防止用スクリーン start -->
+    <script type="text/javascript">
+        var bodyHeight; 
+        if (isIE()){
+            var bodyHeight = null;
+        } else {
+            bodyHeight = getComputedStyle(document.body).height;
+        }
+    </script> 
+    <!-- 二重リクエスト防止用スクリーン end -->
+</body>
+</html>
