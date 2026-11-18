@@ -12,7 +12,7 @@
 
 ```sh
 uv run kindai-syllabus-mcp          # 開発時
-uvx --from /home/tatsuki/projects/kindai-syllabus-mcp kindai-syllabus-mcp   # どこからでも
+uvx --from /path/to/kindai-syllabus-mcp kindai-syllabus-mcp   # どこからでも
 ```
 
 stdio接続。Codex (`~/.codex/config.toml`) と OpenCode (`~/.config/opencode/opencode.json`)
