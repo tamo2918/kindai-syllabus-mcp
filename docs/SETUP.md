@@ -3,7 +3,7 @@
 ## 実行方法
 
 ```sh
-uv run --project /home/tatsuki/projects/kindai-syllabus-mcp kindai-syllabus-mcp
+uv run --project /path/to/kindai-syllabus-mcp kindai-syllabus-mcp
 ```
 
 stdio MCPサーバー。初回起動時にuvがvenvを整備してから起動する。
@@ -17,7 +17,7 @@ stdio MCPサーバー。初回起動時にuvがvenvを整備してから起動�
   "mcp": {
     "kindai-syllabus": {
       "type": "local",
-      "command": ["uv", "run", "--project", "/home/tatsuki/projects/kindai-syllabus-mcp", "kindai-syllabus-mcp"],
+      "command": ["uv", "run", "--project", "/path/to/kindai-syllabus-mcp", "kindai-syllabus-mcp"],
       "enabled": true
     }
   }
@@ -31,15 +31,15 @@ stdio MCPサーバー。初回起動時にuvがvenvを整備してから起動�
 ```toml
 [mcp_servers.kindai-syllabus]
 command = "uv"
-args = ["run", "--project", "/home/tatsuki/projects/kindai-syllabus-mcp", "kindai-syllabus-mcp"]
+args = ["run", "--project", "/path/to/kindai-syllabus-mcp", "kindai-syllabus-mcp"]
 ```
 
 ### Hermes
 
-HermesはDockerスタック(homelabのhermes-personal / hermes-company)で稼働しており、
-ホストのuvパスがコンテナ内から見えないため未登録。
+HermesをDockerコンテナで稼働させる場合、
+ホストのuvパスがコンテナ内から見えないため、そのままでは登録できない。
 本体がMCPに対応している場合の手順:
-`uvx --from /home/tatsuki/projects/kindai-syllabus-mcp kindai-syllabus-mcp`
+`uvx --from /path/to/kindai-syllabus-mcp kindai-syllabus-mcp`
 をコンテナから参照可能な位置に置くか、ホストのStreamable HTTP化
 (server.run(transport="streamable-http") + localhostポート)が必要。
 
@@ -80,5 +80,5 @@ uv run python scripts/smoke_mcp_stdio.py
 ## 更新運用
 
 - ソース変更 → `uv run pytest` → スモーク → コミット。
-- ソースは `/home/tatsuki/projects/kindai-syllabus-mcp`(dev用, Git管理)。
-- homelabコンソールへは `homelab.app.json` 経由で登録(常駐プロセスなし・stdio)。
+- ソースは `/path/to/kindai-syllabus-mcp`(dev用, Git管理)。
+- アプリマニフェスト `homelab.app.json` 経由で管理コンソールへ登録(常駐プロセスなし・stdio)。
