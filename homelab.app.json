@@ -4,7 +4,7 @@
   "description": "公式シラバスを読み取り専用で検索・取得するstdio MCPサーバー。Codex・OpenCode等から利用",
   "kind": "management",
   "compose_project": null,
-  "command": ["uv", "run", "--project", "/home/tatsuki/projects/kindai-syllabus-mcp", "kindai-syllabus-mcp"],
+  "command": ["uv", "run", "--project", "/path/to/kindai-syllabus-mcp", "kindai-syllabus-mcp"],
   "url": null,
   "features": [
     "科目詳細取得(get_course)・出典URLと取得日時を応答に含む",
